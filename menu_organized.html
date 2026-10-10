@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식점 메뉴 정리표</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: #f0f0f0;
+            border: 2px solid #667eea;
+            padding: 20px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        td {
+            border: 1px solid #ddd;
+            padding: 15px 20px;
+            font-size: 15px;
+            color: #333;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+        
+        .price {
+            font-weight: 700;
+            color: #e74c3c;
+            font-size: 16px;
+        }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .item-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .item-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍖 음식점 메뉴 준비물</h1>
+            <p>장소별 필요물품 정리표</p>
+        </div>
+        
+        <div class="content">
+            <!-- 섹션 1: 일회용품 & 용품 -->
+            <div class="section">
+                <h2>🛒 일회용품 & 기본용품</h2>
+                <table>
+                    <tr>
+                        <th>장소</th>
+                        <th>다이소</th>
+                        <th>이마트</th>
+                        <th>편의점</th>
+                        <th>정육점</th>
+                        <th>집</th>
+                    </tr>
+                    <tr>
+                        <td><strong>용품</strong></td>
+                        <td>
+                            <div class="category-tag">일회용접시</div>
+                            <div class="category-tag">물티슈</div>
+                            <div class="category-tag">소주잔</div>
+                            <div class="category-tag">꼬지</div>
+                        </td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>
+                            <div class="category-tag">종이컵</div>
+                            <div class="category-tag">위생장갑</div>
+                            <div class="category-tag">수저(숟4/젓4)</div>
+                            <div class="category-tag">소금</div>
+                            <div class="category-tag">이너이 파우치</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 섹션 2: 식재료 -->
+            <div class="section">
+                <h2>🥘 식재료</h2>
+                <table>
+                    <tr>
+                        <th>카테고리</th>
+                        <th>다이소</th>
+                        <th>이마트</th>
+                        <th>편의점</th>
+                        <th>정육점</th>
+                        <th>집</th>
+                    </tr>
+                    <tr>
+                        <td><strong>기본</strong></td>
+                        <td>-</td>
+                        <td>
+                            <div class="category-tag">순두부</div>
+                            <div class="category-tag">햇반</div>
+                            <div class="category-tag">버섯</div>
+                            <div class="category-tag">볶음김치</div>
+                            <div class="category-tag">술</div>
+                            <div class="category-tag">소시지</div>
+                            <div class="category-tag">쌈장</div>
+                            <div class="category-tag">생수</div>
+                        </td>
+                        <td>
+                            <div class="category-tag">보리차</div>
+                            <div class="category-tag">어묵탕</div>
+                            <div class="category-tag">대파</div>
+                            <div class="category-tag">방울토마토</div>
+                            <div class="category-tag">떡</div>
+                        </td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 섹션 3: 육류 -->
+            <div class="section">
+                <h2>🥓 육류</h2>
+                <table>
+                    <tr>
+                        <th>육류</th>
+                        <th>가격</th>
+                        <th>정육점</th>
+                    </tr>
+                    <tr>
+                        <td><strong>삼겹살</strong></td>
+                        <td><span class="price">200원</span></td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>목살</strong></td>
+                        <td><span class="price">200원</span></td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>소</strong></td>
+                        <td><span class="price">200원</span></td>
+                        <td>✓</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 섹션 4: 추가 항목 -->
+            <div class="section">
+                <h2>🎁 추가 준비물</h2>
+                <div class="items-grid">
+                    <div class="item-card">종이컵</div>
+                    <div class="item-card">위생장갑</div>
+                    <div class="item-card">수저 세트</div>
+                    <div class="item-card">소금</div>
+                    <div class="item-card">파우치</div>
+                </div>
+            </div>
+            
+            <!-- 섹션 5: 과일 & 음료 -->
+            <div class="section">
+                <h2>🍎 과일 & 음료</h2>
+                <table>
+                    <tr>
+                        <th>항목</th>
+                        <th>장소</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td><strong>과일</strong></td>
+                        <td>이마트</td>
+                        <td>
+                            <div class="category-tag">사과</div>
+                            <div class="category-tag">귤</div>
+                            <div class="category-tag">포도</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>음료</strong></td>
+                        <td>이마트</td>
+                        <td>
+                            <div class="category-tag">생수</div>
+                            <div class="category-tag">보리차</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📋 최종 업데이트: 2026년 10월 10일 | 장소별 물품 정리표</p>
+        </div>
+    </div>
+</body>
+</html>
